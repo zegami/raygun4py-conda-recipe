@@ -1,0 +1,70 @@
+package:
+  name: raygun4py
+  version: "3.1.2"
+
+source:
+  fn: raygun4py-3.1.2.tar.gz
+  url: https://pypi.python.org/packages/93/4e/bf94cebeca0f2fa501424d788193749965a2a7af797f44cd91b9898583f8/raygun4py-3.1.2.tar.gz
+  md5: cb7f1fd9f421a3bc3f02ca16e79f0e1e
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - raygun4py = raygun4py:main
+    #
+    # Would create an entry point called raygun4py that calls raygun4py.main()
+
+    - raygun4py = raygun4py.cli:main
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - jsonpickle ==0.9.2
+    - blinker ==1.3.0
+    - requests ==2.9.1
+
+  run:
+    - python
+    - jsonpickle ==0.9.2
+    - blinker ==1.3.0
+    - requests ==2.9.1
+
+test:
+  # Python imports
+  imports:
+    - raygun4py
+    - raygun4py.middleware
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+    - raygun4py --help
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://raygun.io
+  license: MIT License
+  summary: 'Official Raygun provider for Python 2.6/2.7 and Python 3+'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
