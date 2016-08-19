@@ -1,11 +1,11 @@
 package:
   name: raygun4py
-  version: "3.1.2"
+  version: "3.0.3"
 
 source:
-  fn: raygun4py-3.1.2.tar.gz
-  url: https://pypi.python.org/packages/93/4e/bf94cebeca0f2fa501424d788193749965a2a7af797f44cd91b9898583f8/raygun4py-3.1.2.tar.gz
-  md5: cb7f1fd9f421a3bc3f02ca16e79f0e1e
+  fn: raygun4py-3.0.3.tar.gz
+  url: https://github.com/MindscapeHQ/raygun4py/archive/v3.0.3.tar.gz
+ 
 #  patches:
    # List any patch files here
    # - fix.patch
@@ -45,7 +45,6 @@ test:
   # Python imports
   imports:
     - raygun4py
-    - raygun4py.middleware
 
   commands:
     # You can put test commands to be run here.  Use this to test that the
